@@ -23,15 +23,32 @@ nums[0] + nums[2] = 3 + 5 = 8, which is greater than nums[1] = 4.
 nums[1] + nums[2] = 4 + 5 = 9, which is greater than nums[0] = 3. 
 Since the sum of the two sides is greater than the third side for all three cases, therefore, it can form a triangle.
 As all the sides are of different lengths, it will form a scalene triangle.
+
+Constraints:
+
+nums.length == 3
+1 <= nums[i] <= 100
 """
 
 class Solution:
     def triangleType(self, nums: list[int]) -> str:
-        return nums
+        nums.sort()
+        print(nums)
+        if nums[2] > nums[0] + nums[1]:
+            return "none"
+        
+        if nums[0] == nums[1] or nums[1] == nums[2]:
+            if nums[0] == nums[2]:
+                return "equilateral"
+            else:
+                return "isosceles"
+        else:
+            return "scalene"
+        pass
 
 
 
 s = Solution
-nums = [3,3,3]
+nums = [2,8,4]
 answer = s.triangleType(s, nums)
 print(answer)
