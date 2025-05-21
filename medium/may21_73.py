@@ -30,10 +30,32 @@ n == matrix[0].length
 class Solution:
     def setZeroes(self, matrix: list[list[int]]) -> None:
         """
-        Do not return anything, modify matrix in-place instead.
-        """
+        Do not return anything, modify matrix in-place instead.]
 
-        pass
+        O (m + n) solution
+        """
+        m = len(matrix)
+        n = len(matrix[0])
+
+
+        columns = set()  # create two arrays columns and rows.  These arrays will hold information on which rows and columns are to be zeroed out.
+        rows = set()    # using set will automatically remove any duplicates
+
+        # first pass - find all zeros in the first matrix
+        for i in range(m):
+            for j in range(n):
+                if matrix[i][j] == 0:
+                    columns.add(j)
+                    rows.add(i)
+
+        # second pass - zero out rows and columns
+
+        for i in range(m):
+            for j in range(n):
+                if i in rows or j in columns:
+                    matrix[i][j] = 0
+        
+        
 
 
 
