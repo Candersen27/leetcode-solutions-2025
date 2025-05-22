@@ -62,7 +62,7 @@ class Solution:
             if R + 1 < n + 1:
                 diff_array[R + 1] -= 1 # decrement the indext after R in the difference array
 
-        count_array[0] = diff_array[0] # initialize the first element of count array.
+        
         running_sum = 0
     
         for i in range(n):
