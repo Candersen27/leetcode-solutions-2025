@@ -57,12 +57,18 @@ def create_linked_list(arr):
     return head
 
 def linked_list_to_list(head):
-    pass
+    list = []
+    current = head
+
+    while current:
+        list.append(current.val)
+        current = current.next
+
+    return list
 
 # print a linked list in a readable format
 def print_linked_list(head):
     current = head
-    next = current.next
 
     while current:
         print(f"Node value: {current.val}")
@@ -83,3 +89,6 @@ l1 = [2,4,3,6,8,4,3]
 
 head = create_linked_list(l1)
 print_linked_list(head)
+
+node_list = linked_list_to_list(head)
+print(node_list)
