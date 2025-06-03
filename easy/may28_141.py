@@ -15,12 +15,31 @@ class ListNode:
         self.next = None
 
 
+
+"""
 class Solution:
     def hasCycle(self, head: ListNode) -> bool:
+        
+        def moveNodes(nodeSlow, nodeFast):
+            nodeSlow = nodeSlow.next
+            nodeFast = nodeFast.next.next
+
+        NodeSlow = head
+        NodeFast = head
+
+        keepGoing = True
+        
+        while keepGoing:
+            moveNodes(NodeSlow, NodeFast)
+
+            if no
+
+
+        
+        
         return True
-    
+"""
 
 LN = ListNode(12)
-s = Solution()
 
-print(s.hasCycle(LN))
+print(LN)
