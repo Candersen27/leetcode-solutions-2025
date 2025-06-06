@@ -27,7 +27,10 @@ class TreeNode:
 class Solution:
      def inorderTraversal(self, root) -> list[int]:
         answer = []
-
+        
+        if not root:
+            return answer
+        
         def processNode(currentNode):
             if currentNode.left is not None:
                 processNode(currentNode.left)

@@ -15,30 +15,35 @@ class ListNode:
         self.next = None
 
 
-
-"""
 class Solution:
     def hasCycle(self, head: ListNode) -> bool:
         
-        def moveNodes(nodeSlow, nodeFast):
-            nodeSlow = nodeSlow.next
-            nodeFast = nodeFast.next.next
-
-        NodeSlow = head
-        NodeFast = head
-
-        keepGoing = True
+        if head == None:
+            return False
         
-        while keepGoing:
-            moveNodes(NodeSlow, NodeFast)
+        nodeSlow = head
+        nodeFast = head
 
-            if no
+         
+        while True:
 
+            
+            
+            if nodeFast.next is not None and nodeFast.next.next is not None:
+                nodeFast = nodeFast.next.next
+                nodeSlow = nodeSlow.next
+            else:
+                return False
+
+            if nodeFast == nodeSlow:
+                return True
+
+            
 
         
         
         return True
-"""
+
 
 LN = ListNode(12)
 
