@@ -38,7 +38,36 @@ class TreeNode:
 
 class Solution:
     def isValidBST(self, root) -> bool:
-        return True
+        leftBound = float('-inf')
+        rightBound = float('inf')
+
+        isValid = True
+
+        def checkNode(node, LB = leftBound, RB = rightBound, ):
+            nonlocal isValid
+
+            if isValid == True:
+                if node.left is not None:
+                    checkNode(node.left, LB = LB, RB = node.val, )
+                
+                if not LB < node.val < RB:
+                    isValid = False
+                    #break out of everything
+
+                if node.right is not None:
+                    checkNode(node.right, LB = node.val, RB = RB, )
+        
+
+        checkNode(root, leftBound, rightBound)
+        return isValid
+
+
+
+
+
+
+
+
 
 
 
@@ -67,3 +96,14 @@ def buildTree(nodeValues: list[int]):
         array_index += 1
         
     return root
+
+
+
+case1 = [3,1,4,None,None,5,6]
+
+tree1 = buildTree(case1)
+
+S = Solution
+answer = S.isValidBST(S, tree1)
+
+print(answer)
